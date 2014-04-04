@@ -36,7 +36,9 @@ In a script, require the delta module and call `run`.
 
 ## Docs
 
-### delta.run( options, [callback] )
+### Javascript API
+
+#### delta.run( options, [callback] )
 
 Run the deltas specified in the directory `options.deltasDir`.
 
@@ -49,4 +51,33 @@ __Options:__
       // Directory in which your delta scripts live
     , deltasDir: './db/deltas'
     }
+    ```
+
+### PLPGSQL API
+
+#### delta_update_to_version( version )
+
+Inserts the version specified into the deltas table.
+
+### A sample delta script
+
+    ```sql
+    -- Delta
+    
+    DO $$
+    declare version text := '" + data.version + "';
+    begin
+    raise notice '## Running Delta v% ##', version;
+    
+    -- Update version
+    perform delta_update_to_version( version );
+    end$$;
+    ```
+
+### Generating a scaffolding
+
+To generate the above scaffolding sample delta script, you can run a script included in this module:
+
+    ```
+    ./bin/generate-scaffold ./db/deltas/1.1.0.sql
     ```
