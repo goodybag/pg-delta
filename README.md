@@ -1,5 +1,7 @@
 # Module for running delta plpgsql scripts
 
+Runs database deltas in order of semver and adds some nice plpgsql functions to help facilitate migrations.
+
 When you just need some simple database migrations done, it's useful to run a plpgsql delta script. Why use plpgsql instead of using your own scripting language of choice? Plpgsql scripts are run as a transaction automatically, so you don't have to worry about messing things up during development of your delta script.
 
 __Install:__
@@ -40,7 +42,7 @@ delta.run( options, function( error ){
 
 #### delta.run( options, [callback] )
 
-Run the deltas specified in the directory `options.deltasDir`.
+Run the deltas specified in the directory `options.deltasDir` in order of semver.
 
 __Options:__
 
