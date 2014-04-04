@@ -1,0 +1,25 @@
+{
+  "name": "pg-delta",
+  "version": "0.1.0",
+  "description": "Runs database deltas in order of semver and adds some nice plpgsql functions to help facilitate migrations.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/goodybag/pg-delta.git"
+  },
+  "keywords": [
+    "Postgres",
+    "migrations",
+    "deltas"
+  ],
+  "author": "John Fawcett",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "2e151fe5086c3569a63e93237dff5821a9c07271",
+  "dependencies": {
+    "pg-query": "~0.7.0"
+  }
+}
