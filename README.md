@@ -36,6 +36,10 @@ delta.run( options, function( error ){
 });
 ```
 
+## Pre and Post Scripts
+
+Add a corresponding executable pre/post script to your delta. `1.2.7.pre` will be executed before you sql file and `1.2.7.post` will be executed after. Use your scripting environment of choice.
+
 ## Docs
 
 ### Javascript API
