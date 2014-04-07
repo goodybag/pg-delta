@@ -1,4 +1,4 @@
-# Module for running delta plpgsql scripts
+# Node Postgres Deltas
 
 Runs database deltas in order of semver and adds some nice plpgsql functions to help facilitate migrations.
 
