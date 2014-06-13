@@ -90,7 +90,7 @@ delta.on( 'before:delta', function( version, file, contents ){
   /* ... */
 });
 
-delta.on( 'before:x.x.x', function( file, contents ){
+delta.on( 'before:delta:x.x.x', function( file, contents ){
   /* ... */
 });
 
@@ -98,7 +98,7 @@ delta.on( 'after:delta', function( version, file, contents ){
   /* ... */
 });
 
-delta.on( 'after:x.x.x', function( file, contents ){
+delta.on( 'after:delta:x.x.x', function( file, contents ){
   /* ... */
 });
 ```
