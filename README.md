@@ -48,14 +48,30 @@ Add a corresponding executable pre/post script to your delta. `1.2.7.pre` will b
 
 Run the deltas specified in the directory `options.deltasDir` in order of semver.
 
-__Options:__
+__Required Options:__
 
 ```javascript
 {
   // Postgres connection string
   connectionParameters: 'postgres://localhost/my_db'
   // Directory in which your delta scripts live
-, deltasDir: './db/deltas'
+, deltasDir:      './db/deltas'
+, deltasQuery:    'select * from deltas'
+, deltaExtension: 'sql'
+, setupPath:      path.join( __dirname, 'setup.sql' )
+}
+```
+
+__Optional Options and Defaults:__
+
+```javascript
+{
+  // Query used to select deltas already run
+  deltasQuery:    'select * from deltas'
+  // Extension for deltas file
+, deltaExtension: 'sql'
+  // Path for setup script
+, setupPath:      path.join( __dirname, 'setup.sql' )
 }
 ```
 

@@ -79,3 +79,13 @@ begin
   end if;
 end;
 $$ language plpgsql;
+
+-- #860 Admin Panel Photos
+
+DO $$
+begin
+  create table if not exists "deltas" ();
+  perform add_column( 'deltas', 'id',       'serial primary key' );
+  perform add_column( 'deltas', 'version',  'text' );
+  perform add_column( 'deltas', 'date',     'timestamp default now()' );
+end$$;

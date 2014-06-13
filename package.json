@@ -4,7 +4,7 @@
   "description": "Runs database deltas in order of semver and adds some nice plpgsql functions to help facilitate migrations.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha -b -R spec"
   },
   "repository": {
     "type": "git",
@@ -20,13 +20,16 @@
   "readmeFilename": "README.md",
   "gitHead": "2e151fe5086c3569a63e93237dff5821a9c07271",
   "dependencies": {
-    "pg-query": "~0.7.0",
     "async": "~0.6.2",
-    "semver": "~2.2.1"
+    "debug": "^1.0.2",
+    "pg-query": "~0.7.0",
+    "pg.js": "^3.3.0",
+    "semver": "^2.2.1"
   },
   "devDependencies": {
-    "grunt-contrib-jshint": "~0.10.0",
     "grunt": "~0.4.4",
-    "grunt-contrib-watch": "~0.6.1"
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "mocha": "^1.20.1"
   }
 }
