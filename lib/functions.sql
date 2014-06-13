@@ -20,6 +20,18 @@ end;
 $$ language plpgsql;
 
 -- Check constraint existence
+create or replace function constraint_exists( c_name text )
+returns boolean as $$
+begin
+  return exists (
+    select 1 from
+      information_schema.constraint_column_usage usage
+    where usage.constraint_name = c_name
+  );
+end;
+$$ language plpgsql;
+
+-- Check constraint existence based on constraint type, table, and column
 create or replace function constraint_exists( c_type text, tbl_name text, col_name text )
 returns boolean as $$
 begin
