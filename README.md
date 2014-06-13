@@ -36,13 +36,11 @@ delta.run( options, function( error ){
 });
 ```
 
-## Pre and Post Scripts
-
-Add a corresponding executable pre/post script to your delta. `1.2.7.pre` will be executed before you sql file and `1.2.7.post` will be executed after. Use your scripting environment of choice.
-
 ## Docs
 
 ### Javascript API
+
+Note that the pg-delta module is also an `EventEmitter`.
 
 #### delta.run( options, [callback] )
 
@@ -82,6 +80,28 @@ Checks whether a table exists
 #### delta.runSqlFile( filePath, callback( error ) )
 
 Reads a file and executes the result as a query
+
+### Events
+
+```javascript
+var delta = require('pg-delta');
+
+delta.on( 'before:delta', function( version, file, contents ){
+  /* ... */
+});
+
+delta.on( 'before:x.x.x', function( file, contents ){
+  /* ... */
+});
+
+delta.on( 'after:delta', function( version, file, contents ){
+  /* ... */
+});
+
+delta.on( 'after:x.x.x', function( file, contents ){
+  /* ... */
+});
+```
 
 ### PLPGSQL API
 

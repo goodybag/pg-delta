@@ -9,10 +9,8 @@ var pgconn = 'postgres://localhost:5432/pg_delta_test';
 
 var destroyCreateDb = function( callback ){
   query.connectionParameters = pgconn.substring( 0, pgconn.lastIndexOf('/') ) + '/postgres';
-console.log('destroy');
   query( 'drop database if exists pg_delta_test', [], function( error ){
     if ( error ) return callback( error );
-    console.log('create');
     query( 'create database pg_delta_test', [], callback );
   });
 };
