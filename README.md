@@ -133,7 +133,7 @@ begin
 
   -- Drop constraints before adding them so script can 
   -- be run multiple times
-  if exists ( select 1 where constraint_exists( 'users_email_key' ) is true )
+  if constraint_exists( 'users_email_key' )
   then
     alter table users drop constraing users_email_key;
   end if;
