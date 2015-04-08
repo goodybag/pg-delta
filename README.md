@@ -53,10 +53,7 @@ __Required Options:__
   // Postgres connection string
   connectionParameters: 'postgres://localhost/my_db'
   // Directory in which your delta scripts live
-, deltasDir:      './db/deltas'
-, deltasQuery:    'select * from deltas'
-, deltaExtension: 'sql'
-, setupPath:      path.join( __dirname, 'setup.sql' )
+, deltasDir: './db/deltas'
 }
 ```
 
